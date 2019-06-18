@@ -11,6 +11,10 @@ function bgDodgerBlue() {
   return event.target.style.backgroundColor = 'dodgerblue';
 }
 
+function bgSeaGreen() {
+  return event.target.style.backgroundColor = 'seagreen';
+}
+
 function textOrange() {
   return event.target.style.color = 'orange';
 }
@@ -31,6 +35,7 @@ const navLink = document.querySelectorAll('.nav-link');
 const busImg = document.querySelector('.home img');
 const buttons = document.querySelectorAll('.btn');
 const wholePage = document.querySelector('html');
+const textBoxes = document.querySelectorAll('section input');
 
 // event listeners
 logoHeading.addEventListener('click', beepBeep);
@@ -46,3 +51,15 @@ buttons.forEach(item => {
   item.addEventListener('resize', bgPink);
 });
 wholePage.addEventListener('dblclick', bgPink);
+// textBoxes.forEach(item => {
+//   item.addEventListener('select', bgDodgerBlue);
+// });
+textBoxes.forEach(item => {
+  item.addEventListener('drag', bgDodgerBlue);
+});
+textBoxes.forEach(item => {
+  item.addEventListener('drop', bgPink);
+});
+// textBoxes.forEach(item => {
+//   item.addEventListener('focus', bgSeaGreen);
+// });
